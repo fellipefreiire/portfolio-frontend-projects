@@ -27,9 +27,6 @@ module.exports = {
         './ProjectsApp': './src/bootstrap',
         './Section': './src/components/Section/index.tsx',
       },
-      remotes: {
-        home: 'home@http://localhost:8080/remoteEntry.js',
-      },
       shared: packageJson.dependencies,
     }),
     // new ReactRefreshWebpackPlugin(),
