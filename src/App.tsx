@@ -1,10 +1,31 @@
 import './styles/global/styles.css'
+import { Route, Routes, Router, Location } from 'react-router-dom'
+import { MemoryHistory, BrowserHistory } from 'history'
+import { Section } from './components/Section'
+import { useState } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
+import { Projects } from './pages/Projects'
+import theme from './styles/theme/default'
 
-export const App = () => {
+interface IAppProps {
+  history: BrowserHistory | MemoryHistory
+  location: Location
+}
+
+export const App = ({ location, history }: IAppProps) => {
+  const [isolationLocation, setIsolationLocation] = useState(history.location)
+
+  if (!location)
+    history.listen(({ location }) => setIsolationLocation(location))
+
   return (
-    <ChakraProvider>
-      <div></div>
+    <ChakraProvider theme={theme}>
+      <Router location={location || isolationLocation} navigator={history}>
+        <Routes>
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/' element={<Section />} />
+        </Routes>
+      </Router>
     </ChakraProvider>
   )
 }
