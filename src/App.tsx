@@ -19,7 +19,7 @@ export const App = ({ location, history }: IAppProps) => {
     history.listen(({ location }) => setIsolationLocation(location))
 
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme} resetCSS={false}>
       <Router location={location || isolationLocation} navigator={history}>
         <Routes>
           <Route path='/projects' element={<Projects />} />
