@@ -6,11 +6,47 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react'
-import logoRcabral from '../../assets/logo-rcabral.png'
 import projectsBackground from '../../assets/projects-background.png'
 
 export const Section = () => {
-  const dataQtd = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const data = [
+    {
+      title: 'rcabral',
+      imgUrl: 'rcabral.png',
+    },
+    {
+      title: 'soon',
+      imgUrl: 'soon.png',
+    },
+    {
+      title: 'soon2',
+      imgUrl: 'soon.png',
+    },
+    {
+      title: 'soon3',
+      imgUrl: 'soon.png',
+    },
+    {
+      title: 'soon4',
+      imgUrl: 'soon.png',
+    },
+    {
+      title: 'soon5',
+      imgUrl: 'soon.png',
+    },
+    {
+      title: 'soon6',
+      imgUrl: 'soon.png',
+    },
+    {
+      title: 'soon7',
+      imgUrl: 'soon.png',
+    },
+    {
+      title: 'soon8',
+      imgUrl: 'soon.png',
+    },
+  ]
   const pc = useBreakpointValue({ base: false, lg: true })
   const mobile = useBreakpointValue({ base: true, lg: false })
 
@@ -74,9 +110,15 @@ export const Section = () => {
             bgPos='right'
           >
             <Flex wrap='wrap' w='100%' flex={1}>
-              {dataQtd.map((item) => (
-                <Flex key={item} flexBasis={['calc(100%/2)', 'calc(100%/3)']}>
-                  <Image src={logoRcabral} w='100%' />
+              {data.map((item) => (
+                <Flex
+                  key={item.title}
+                  flexBasis={['calc(100%/2)', 'calc(100%/3)']}
+                >
+                  <Image
+                    src={require(`../../assets/${item.imgUrl}`)}
+                    w='100%'
+                  />
                 </Flex>
               ))}
             </Flex>
@@ -107,9 +149,15 @@ export const Section = () => {
             mb='40px'
           >
             <Flex wrap='wrap' w='100%' flex={1}>
-              {dataQtd.map((item) => (
-                <Flex key={item} flexBasis={['calc(100%/2)', 'calc(100%/3)']}>
-                  <Image src={logoRcabral} w='100%' />
+              {data.map((item) => (
+                <Flex
+                  key={item.title}
+                  flexBasis={['calc(100%/2)', 'calc(100%/3)']}
+                >
+                  <Image
+                    src={require(`../../assets/${item.imgUrl}`)}
+                    w='100%'
+                  />
                 </Flex>
               ))}
             </Flex>
