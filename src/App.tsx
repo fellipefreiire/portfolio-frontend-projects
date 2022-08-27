@@ -1,11 +1,10 @@
-import './styles/global/styles.css'
 import { Route, Routes, Router, Location } from 'react-router-dom'
 import { MemoryHistory, BrowserHistory } from 'history'
 import { Section } from './components/Section'
 import { useState } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Projects } from './pages/Projects'
-import theme from './styles/theme/default'
+import { theme } from './styles/theme/default'
 
 interface IAppProps {
   history: BrowserHistory | MemoryHistory
